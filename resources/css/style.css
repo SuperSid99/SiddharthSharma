@@ -128,7 +128,7 @@ p {
 
 /* Responsive Styles */
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1200px) {
     .event_list {
         grid-template-columns: 1fr;
     }
