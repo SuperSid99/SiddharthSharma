@@ -41,8 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function createParticles(e) {
-        const xPos = e.clientX;
-        const yPos = e.clientY;
+
+        // Check if the event is a touch event
+        if (e.touches && e.touches.length > 0) {
+            const touch = e.touches[0];
+            const xPos = touch.clientX;
+            const yPos = touch.clientY;
+        }
+        else {
+            const xPos = e.clientX;
+            const yPos = e.clientY;
+        }
 
         for (let i = 0; i < 1; i++) {
             particles.push(new Particle(xPos, yPos));
