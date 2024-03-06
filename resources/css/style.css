@@ -128,7 +128,7 @@ p {
 
 /* Responsive Styles */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1080px) {
     .event_list {
         grid-template-columns: 1fr;
     }
@@ -145,5 +145,40 @@ p {
     .btn {
         display: block;
         margin: 0 auto;
+    }
+
+    h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 300%;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 5px;
+    }
+
+    h2, h3 {
+        color: #000000;
+        font-weight: 300;
+        letter-spacing: 1px;
+        word-spacing: 4px;
+    }
+    
+    h2 {
+        font-size: 200%;
+    }
+    
+    h3 {
+        font-size: 100%;
+    }
+    
+    h4 {
+        color: #000000;
+        font-size: 70%;
+    }
+    
+    p {
+        color: #000000;
+        font-size: 50%;
     }
 }
