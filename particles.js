@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(animateParticles);
     }
 
+
+    document.addEventListener("touchmove", createParticles);
+    animateParticles();
+
     document.addEventListener("mousemove", createParticles);
     animateParticles();
 
