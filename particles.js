@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         draw() {
             ctx.fillStyle = "rgba(0,0,0,0.25)";
             ctx.strokeStyle = "rgba(0,0,0,1)";
-            ctx.lineWidth = 2;
+            // ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size*2, 0, Math.PI * 2);
             ctx.closePath();
