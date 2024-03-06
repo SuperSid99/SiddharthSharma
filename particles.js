@@ -47,16 +47,22 @@ document.addEventListener("DOMContentLoaded", function () {
             const touch = e.touches[0];
             const xPos = touch.clientX;
             const yPos = touch.clientY;
+            
+            for (let i = 0; i < 10; i++) {
+                particles.push(new Particle(xPos, yPos));
+            }
+            
         }
         else {
             const xPos = e.clientX;
             const yPos = e.clientY;
-        }
+        
 
-        for (let i = 0; i < 1; i++) {
-            particles.push(new Particle(xPos, yPos));
-        }
+            for (let i = 0; i < 1; i++) {
+                particles.push(new Particle(xPos, yPos));
+            }
         // particles.push(new Particle(xPos, yPos));
+        }
     }
 
     function animateParticles() {
