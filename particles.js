@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         draw() {
-            ctx.fillStyle = "rgba(0,0,0,0.25)";
-            ctx.strokeStyle = "rgba(0,0,0,1)";
+            ctx.fillStyle = "rgba(255,255,255,0.50)";
+            ctx.strokeStyle = "rgba(255,255,255,1)";
             // ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size*2, 0, Math.PI * 2);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const xPos = touch.clientX;
             const yPos = touch.clientY;
             
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 3; i++) {
                 particles.push(new Particle(xPos, yPos));
             }
             
