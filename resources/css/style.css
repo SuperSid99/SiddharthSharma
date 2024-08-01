@@ -106,6 +106,16 @@ p {
     width: 100%;
 }
 
+.fillscreen {
+    width: 100vw;
+    height: 100vh;
+  }
+
+.centretext{
+    text-align: center;
+    margin-top: 35vh;
+    vertical-align: middle;
+}
 
 
 /* Buttons Styles */
