@@ -113,7 +113,7 @@ p {
 
 .centretext{
     text-align: center;
-    margin-top: 35vh;
+    margin-top: 30vh;
     vertical-align: middle;
 }
 
@@ -142,6 +142,36 @@ p {
     background-color: #fff;
     border: 1px solid #fff;
     color: #000;
+}
+
+.big_btn:link,
+.big_btn:visited{
+    display: inline-block;
+    padding: 10px 40px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+.buton_in_text{
+    /* display:grid; */
+    padding: 10px 50px;
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+.disp_grid{
+    display: grid;
+}
+
+.make_big{
+    font-size: 200%;
+}
+
+.spacing{
+    padding: 0px 30px;
 }
 
 /* Responsive Styles */
