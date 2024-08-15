@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
         <script src="particles.js" defer></script>
+        <script src="wink.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
         <title>Ek Patla Giraffe</title>
@@ -45,17 +46,26 @@
         
         <section class="events ">
             
-            <div class="row centretext">
+            <div id="text-container" class="row centretext">
                             
                 <h2>Hello! My name is Siddharth Sharma :)</h2>
                 <h5><br></h5>
                 <h3>Sometimes I do things.</h3>
-                <h5><br></h5>
+                <h5><br><br></h5>
                 <div class="disp_grid">
                     <ul class="row buton_in_text make_big">
-                        <li class="spacing"><a class="big_btn btn_icon" href="Siddharth_Sharma_Resume.pdf"><ion-icon name="document-outline"></ion-icon></a></li>
-                        <li class="spacing"><a class="big_btn btn_icon" href="https://github.com/SuperSid99"><ion-icon name="logo-github"></ion-icon></a></li>
-                        <li class="spacing"><a class="big_btn btn_icon" href="https://www.linkedin.com/in/siddharth-sharma-ba30051a1/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li class="spacing arrow-container">
+                            <a class="big_btn btn_icon" href="Siddharth_Sharma_Resume.pdf"><ion-icon name="document-outline"></ion-icon></a> 
+                            <div class="arrow_res"></div>
+                        </li>
+                        <li class="spacing arrow-container">
+                            <a class="big_btn btn_icon" href="https://github.com/SuperSid99"><ion-icon name="logo-github"></ion-icon></a>
+                            <div class="arrow_git"></div>
+                        </li>
+                        <li class="spacing arrow-container">
+                            <a class="big_btn btn_icon" href="https://www.linkedin.com/in/siddharth-sharma-ba30051a1/"><ion-icon name="logo-linkedin"></ion-icon>
+                                <div class="arrow_link"></div>
+                            </a></li>
                     </ul>
                 </div>
             
