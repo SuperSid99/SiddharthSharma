@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         update() {
             this.x += this.speedX;
             this.y += this.speedY;
-            if (this.size > 0.2) this.size -= 0.1;
+            if (this.size > 0.2) this.size -= 0.07;
         }
 
         draw() {
