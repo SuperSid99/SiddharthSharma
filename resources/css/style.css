@@ -127,10 +127,10 @@ p {
     width: 100%;
 }
 
-.fillscreen {
-    /* width: 100vw;
-    height: 100vh; */
-  }
+/* .fillscreen {
+    width: 100vw;
+    height: 100vh;
+  } */
 
 .centretext{
     text-align: center;

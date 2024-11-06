@@ -15,6 +15,33 @@
     cursor: pointer;
 }
 
+.action-button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 300%;
+    font-weight: 300;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 200px;
+    border-color: #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    transition: background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+.action-button:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.pause-button{
+    align-self:center;
+}
+.refresh-button{
+    align-self:flex-end;
+    margin-bottom: 10dvh;
+}
+
 /* Circle styling */
 .toggle-button .circle {
     position: absolute;
@@ -44,10 +71,15 @@
 /* Container styling */
 .container {
     display: flex;
-    gap: 100px; /* Space between the boxes */
+    gap: 30px; /* Space between the boxes */
     justify-content: center;
     padding: 25px; /* Padding around the container */
     box-sizing: border-box;
+}
+
+.action_btns{
+    display: flex;
+    align-items: center;
 }
 
 /* Box styling */
@@ -67,10 +99,22 @@
     border-color: #000000;
 }
 
+
 .right-box {
     background-color: #000000; /* Color for right box */
     border: 1px solid;
     border-color: #ffffff;
+}
+
+.left-box .counter{
+    color: #000000;
+    font-size: 700%;
+    font-weight: 400;
+}
+.right-box .counter{
+    color: #ffffff;
+    font-size: 700%;
+    font-weight: 400;
 }
 
 .container.swapped .left-box {
@@ -79,12 +123,21 @@
     border-color: #ffffff;
 }
 
+
 .container.swapped .right-box {
     background-color: #ffffff;
     border: 1px solid;
     border-color: #000000;
 }
 
-/* .centre{
-    float: ;
-} */
+.container.swapped .left-box .counter{
+    color: #ffffff;
+    font-size: 700%;
+    font-weight: 400;
+
+}
+.container.swapped .right-box .counter{
+    color: #000000;
+    font-size: 700%;
+    font-weight: 400;
+}
