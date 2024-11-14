@@ -15,6 +15,13 @@
     cursor: pointer;
 }
 
+.play-state {
+    transform: translate(3px); /* Only applies offset in play state */
+    
+}
+
+
+
 .action-button {
     display: inline-block;
     padding: 10px 10px;
@@ -34,13 +41,13 @@
     color: #000000;
 }
 
-.pause-button{
+/* .pause-button{
     align-self:center;
 }
 .refresh-button{
     align-self:flex-end;
     margin-bottom: 10dvh;
-}
+} */
 
 /* Circle styling */
 .toggle-button .circle {
@@ -78,7 +85,7 @@
 }
 
 .action_btns{
-    display: flex;
+    display: grid;
     align-items: center;
 }
 

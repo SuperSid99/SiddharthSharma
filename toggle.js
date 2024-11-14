@@ -15,7 +15,6 @@ leftTime=rightTime = 600;
 let currentTimer = 'left'; // Start with the left timer
 let intervalId = null;
 let isRunning = false; // Track if the countdown is running
-let isPaused = false; // Track if the countdown is paused
 
 // Format seconds into MM:SS
 function formatTime(seconds) {
@@ -63,20 +62,22 @@ function switchTimer() {
 function togglePause() {
    
     const pauseIcon = document.getElementById("pause-icon");
-    if (isPaused) {
+    if (!isRunning) {
         clearInterval(intervalId); // Pause countdown
         pauseIcon.setAttribute("name", "play-outline"); // Change icon to play
+        pauseIcon.classList.add("play-state"); // Add play-state class for offset
     } else {
         if (isRunning) {
             startCountdown(); // Resume countdown if running
         }
         pauseIcon.setAttribute("name", "pause-outline"); // Change icon to pause
+        pauseIcon.classList.remove("play-state"); // Remove offset for pause state
     }
 }
 
 function pauseCountdown() {
-    isPaused = !isPaused; // Toggle the paused state
-    if (isPaused) {
+    isRunning = !isRunning; // Toggle the paused state
+    if (!isRunning) {
         clearInterval(intervalId); // Stop the countdown
     } else if (isRunning) {
         startCountdown(); // Resume countdown if it was already running
@@ -87,10 +88,11 @@ function pauseCountdown() {
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
         event.preventDefault(); // Prevent default spacebar behavior (scrolling)
-        
+
         if (!isRunning) {
             // Start countdown if not already running
             isRunning = true;
+            togglePause()
             startCountdown();
         } else {
             // If already running, switch timer
