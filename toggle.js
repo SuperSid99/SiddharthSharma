@@ -9,8 +9,12 @@ function toggleColors() {
 // Initial countdown times in seconds for each timer
 let leftTime; // for left box
 let rightTime; // for right box
+let startTime; // for resetting
+let incriment; // The incriment
 
-leftTime=rightTime = 600;
+startTime=leftTime=rightTime = 600;
+incriment=5;
+
 
 let currentTimer = 'left'; // Start with the left timer
 let intervalId = null;
@@ -53,7 +57,19 @@ function startCountdown() {
 // Switch active timer between left and right boxes
 function switchTimer() {
     // Toggle current timer between left and right
-    currentTimer = currentTimer === 'left' ? 'right' : 'left';
+    // currentTimer = currentTimer === 'left' ? 'right' : 'left';
+
+    if (currentTimer === 'left') {
+        leftTime+=incriment;
+        document.getElementById('left-timer').textContent = formatTime(leftTime);
+        currentTimer='right';
+    }
+    else if (currentTimer === 'right') {
+        rightTime+=incriment;
+        document.getElementById('right-timer').textContent = formatTime(rightTime);
+        currentTimer='left';
+    }
+    
 
     // Restart countdown on the new active timer
     startCountdown();
@@ -66,7 +82,8 @@ function togglePause() {
         clearInterval(intervalId); // Pause countdown
         pauseIcon.setAttribute("name", "play-outline"); // Change icon to play
         pauseIcon.classList.add("play-state"); // Add play-state class for offset
-    } else {
+    }
+    else {
         if (isRunning) {
             startCountdown(); // Resume countdown if running
         }
@@ -83,6 +100,21 @@ function pauseCountdown() {
         startCountdown(); // Resume countdown if it was already running
     }
 }
+
+
+function refreshCountdown() {
+    const pauseIcon = document.getElementById("pause-icon");
+    clearInterval(intervalId); // Stop the countdown
+    pauseIcon.setAttribute("name", "play-outline"); // Change icon to play
+    pauseIcon.classList.add("play-state"); // Add play-state class for offset
+
+    leftTime=rightTime = startTime;
+    currentTimer = 'left'; // Start with the left timer
+    // intervalId = null;
+    isRunning = false; // Track if the countdown is running
+    updateTimerDisplay();
+}
+
 
 // Spacebar event listener to control start/switch of countdown
 document.addEventListener('keydown', (event) => {
