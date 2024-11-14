@@ -43,10 +43,26 @@ function startCountdown() {
         if (currentTimer === 'left' && leftTime > 0) {
             leftTime--;
             document.getElementById('left-timer').textContent = formatTime(leftTime);
-        } else if (currentTimer === 'right' && rightTime > 0) {
+            
+            const leftbox = document.querySelector('.left-box .counter');
+            leftbox.classList.add('active'); // adds the 'active' class  
+            
+            const rightbox = document.querySelector('.right-box .counter');
+            rightbox.classList.remove('active'); // removes the 'active' class  
+        } 
+        
+        else if (currentTimer === 'right' && rightTime > 0) {
             rightTime--;
             document.getElementById('right-timer').textContent = formatTime(rightTime);
-        } else {
+
+            const leftbox = document.querySelector('.left-box .counter');
+            leftbox.classList.remove('active'); // removes the 'active' class  
+            
+            const rightbox = document.querySelector('.right-box .counter');
+            rightbox.classList.add('active'); // adds the 'active' class  
+        } 
+        
+        else {
             // Stop countdown when time reaches zero
             clearInterval(intervalId);
             isRunning = false;
@@ -64,6 +80,7 @@ function switchTimer() {
         document.getElementById('left-timer').textContent = formatTime(leftTime);
         currentTimer='right';
     }
+
     else if (currentTimer === 'right') {
         rightTime+=incriment;
         document.getElementById('right-timer').textContent = formatTime(rightTime);
@@ -83,6 +100,7 @@ function togglePause() {
         pauseIcon.setAttribute("name", "play-outline"); // Change icon to play
         pauseIcon.classList.add("play-state"); // Add play-state class for offset
     }
+    
     else {
         if (isRunning) {
             startCountdown(); // Resume countdown if running
@@ -96,7 +114,9 @@ function pauseCountdown() {
     isRunning = !isRunning; // Toggle the paused state
     if (!isRunning) {
         clearInterval(intervalId); // Stop the countdown
-    } else if (isRunning) {
+    } 
+    
+    else if (isRunning) {
         startCountdown(); // Resume countdown if it was already running
     }
 }
@@ -112,6 +132,15 @@ function refreshCountdown() {
     currentTimer = 'left'; // Start with the left timer
     // intervalId = null;
     isRunning = false; // Track if the countdown is running
+
+
+    const leftbox = document.querySelector('.left-box .counter');
+    leftbox.classList.remove('active'); // removes the 'active' class  
+    
+    const rightbox = document.querySelector('.right-box .counter');
+    rightbox.classList.remove('active'); // removes the 'active' class  
+
+
     updateTimerDisplay();
 }
 

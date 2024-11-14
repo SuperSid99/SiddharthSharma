@@ -124,6 +124,17 @@
     font-weight: 400;
 }
 
+.left-box .counter.active{
+    color:  #4caf50;
+    font-size: 700%;
+    font-weight: 400;
+}
+.right-box .counter.active{
+    color: #4caf50;
+    font-size: 700%;
+    font-weight: 400;
+}
+
 .container.swapped .left-box {
     background-color: #000000;
     border: 1px solid;
