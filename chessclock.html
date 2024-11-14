@@ -5,9 +5,11 @@
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" >
         <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
         <link rel="stylesheet" type="text/css" href="resources/css/toggle.css" >
+        <link rel="stylesheet" type="text/css" href="resources/css/landsacpe.css" >
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
         <script src="particles.js" defer></script>
         <script src="toggle.js"></script>
+        <script src="landsacpe.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
         <title>Ek Patla Giraffe</title>
@@ -37,31 +39,34 @@
         
         <section class="events ">
             
-            <div class="row centre">
-                <ul>
-                    <li>
-                        <button class="toggle-button" onclick="this.classList.toggle('active') , toggleColors()">
-                            <span class="circle"></span>
-                        </button>
-                    </li>
-                </ul>
+            <div class="bigcontainer">
                 
-            </div>
-
-            <div class="container">
-                <div class="box left-box">
-                    <h1 class="row centre counter" id="left-timer">10:00</h1>
-                </div>
-
-                <div class="action_btns">
-                    <button class="action-button refresh-button" onclick="refreshCountdown()" ><ion-icon name="reload-outline"></ion-icon></button>
-                    <button class="action-button pause-button" onclick="pauseCountdown() , togglePause()" ><ion-icon id="pause-icon" class="play-state" name="play-outline"></ion-icon></button>
-                    <button class="action-button pause-button" onclick="pauseCountdown() , togglePause()" ><ion-icon name="shuffle-outline"></ion-icon></button>
-                </div>
+                <div class="row centre">
+                    <ul>
+                        <li>
+                            <button class="toggle-button" onclick="this.classList.toggle('active') , toggleColors()">
+                                <span class="circle"></span>
+                            </button>
+                        </li>
+                    </ul>
                     
-                
-                <div class="box right-box">
-                    <h1 class="row centre counter" id="right-timer">10:00</h1>
+                </div>
+
+                <div class="container">
+                    <div class="box left-box">
+                        <h1 class="row centre counter" id="left-timer">10:00</h1>
+                    </div>
+
+                    <div class="action_btns">
+                        <button class="action-button refresh-button" onclick="refreshCountdown()" ><ion-icon name="reload-outline"></ion-icon></button>
+                        <button class="action-button pause-button" onclick="pauseCountdown() , togglePause()" ><ion-icon id="pause-icon" class="play-state" name="play-outline"></ion-icon></button>
+                        <button class="action-button pause-button" onclick="pauseCountdown() , togglePause()" ><ion-icon name="shuffle-outline"></ion-icon></button>
+                    </div>
+                        
+                    
+                    <div class="box right-box">
+                        <h1 class="row centre counter" id="right-timer">10:00</h1>
+                    </div>
                 </div>
             </div>
             

@@ -162,5 +162,19 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+// touch event listener to control start/switch of countdown
+document.addEventListener('touchstart', (event) => {
+
+    if (!isRunning) {
+        // Start countdown if not already running
+        isRunning = true;
+        togglePause()
+        startCountdown();
+    } else {
+        // If already running, switch timer
+        switchTimer();
+    }
+});
+
 // Initialize the timer display
 updateTimerDisplay();

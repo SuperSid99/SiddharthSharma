@@ -159,3 +159,30 @@
     font-size: 700%;
     font-weight: 400;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+
+    
+    /* Landscape orientation */
+    @media (orientation: landscape) {
+        /* landscape-specific styles here */
+        .bigcontainer {
+            display: grid;
+        }
+        /* Adjust other elements for landscape as needed */
+    }
+    
+    /* Portrait orientation - you might also prompt the user to rotate */
+    @media (orientation: portrait) {
+        .rotate-message {
+            display: block; /* Show rotation prompt */
+        }
+        .bigcontainer {
+            display: none; /* Hide the main content in portrait */
+        }
+    }
+    
+}        
+
