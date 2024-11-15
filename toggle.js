@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    ignoreButtons = document.querySelectorAll('.ignore-touch');
-    console.log(ignoreButtons);
+    touchBox = document.querySelectorAll('.touchBox');
+    // touchBox.join(document.querySelectorAll('.box','.counter'));
+    console.log(touchBox);
 });
 
 // Format seconds into MM:SS
@@ -196,7 +197,9 @@ document.addEventListener('keydown', (event) => {
 // touch event listener to control start/switch of countdown
 document.addEventListener('touchstart', (event) => {
 
-    if (!Array.from(ignoreButtons).includes(event.target)) {
+    console.log(event.target,Array.from(touchBox),Array.from(touchBox).includes(event.target))
+
+    if (Array.from(touchBox).includes(event.target)) {
 
         if (!isRunning) {
             // Start countdown if not already running
