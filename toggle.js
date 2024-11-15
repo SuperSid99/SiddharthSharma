@@ -1,3 +1,5 @@
+let ignoreButtons;
+
 // Initial countdown times in seconds for each timer
 let leftTime; // for left box
 let rightTime; // for right box
@@ -16,8 +18,6 @@ function toggleColors() {
     const container = document.querySelector('.container');
     container.classList.toggle('swapped'); // Toggles the 'swapped' class
     currentTimer = startwhite();
-    console.log('toggleColors')
-    console.log(currentTimer,"1");
 }
 
 
@@ -33,6 +33,11 @@ function startwhite() {
 
 document.addEventListener("DOMContentLoaded", function () {
     currentTimer = startwhite();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    ignoreButtons = document.querySelectorAll('.ignore-touch');
+    console.log(ignoreButtons);
 });
 
 // Format seconds into MM:SS
@@ -128,7 +133,6 @@ function togglePause() {
     
     else {
         if (isRunning) {
-            console.log('togglePause')
             startCountdown(); // Resume countdown if running
         }
         pauseIcon.setAttribute("name", "pause-outline"); // Change icon to pause
@@ -192,14 +196,17 @@ document.addEventListener('keydown', (event) => {
 // touch event listener to control start/switch of countdown
 document.addEventListener('touchstart', (event) => {
 
-    if (!isRunning) {
-        // Start countdown if not already running
-        isRunning = true;
-        togglePause()
-        startCountdown();
-    } else {
-        // If already running, switch timer
-        switchTimer();
+    if (!Array.from(ignoreButtons).includes(event.target)) {
+
+        if (!isRunning) {
+            // Start countdown if not already running
+            isRunning = true;
+            togglePause();
+            startCountdown();
+        } else {
+            // If already running, switch timer
+            switchTimer();
+        }
     }
 });
 
