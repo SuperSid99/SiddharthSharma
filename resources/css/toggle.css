@@ -152,7 +152,7 @@
     color: #ffffff;
     font-size: 700%;
     font-weight: 400;
-
+    
 }
 .container.swapped .right-box .counter{
     color: #000000;
@@ -160,6 +160,16 @@
     font-weight: 400;
 }
 
+.container.swapped .left-box .counter.active{
+    color:  #4caf50;
+    font-size: 700%;
+    font-weight: 400;
+}
+.container.swapped .right-box .counter.active{
+    color: #4caf50;
+    font-size: 700%;
+    font-weight: 400;
+}
 
 
 @media only screen and (max-width: 1200px) {

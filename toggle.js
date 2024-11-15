@@ -1,24 +1,39 @@
-function toggleColors() {
-    const container = document.querySelector('.container');
-    container.classList.toggle('swapped'); // Toggles the 'swapped' class
-}
-
-
-
-
 // Initial countdown times in seconds for each timer
 let leftTime; // for left box
 let rightTime; // for right box
 let startTime; // for resetting
 let incriment; // The incriment
-
+let currentTimer;
 startTime=leftTime=rightTime = 600;
 incriment=5;
 
 
-let currentTimer = 'left'; // Start with the left timer
 let intervalId = null;
 let isRunning = false; // Track if the countdown is running
+
+
+function toggleColors() {
+    const container = document.querySelector('.container');
+    container.classList.toggle('swapped'); // Toggles the 'swapped' class
+    currentTimer = startwhite();
+    console.log('toggleColors')
+    console.log(currentTimer,"1");
+}
+
+
+function startwhite() {
+    const container = document.querySelector('.container');
+    if (container.classList.contains('swapped')){
+        return 'right';
+    }
+    else{
+        return 'left';
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    currentTimer = startwhite();
+});
 
 // Format seconds into MM:SS
 function formatTime(seconds) {
@@ -79,12 +94,22 @@ function switchTimer() {
         leftTime+=incriment;
         document.getElementById('left-timer').textContent = formatTime(leftTime);
         currentTimer='right';
+        const leftbox = document.querySelector('.left-box .counter');
+        leftbox.classList.remove('active'); // removes the 'active' class  
+        
+        const rightbox = document.querySelector('.right-box .counter');
+        rightbox.classList.add('active'); // adds the 'active' class  
     }
 
     else if (currentTimer === 'right') {
         rightTime+=incriment;
         document.getElementById('right-timer').textContent = formatTime(rightTime);
         currentTimer='left';
+        const leftbox = document.querySelector('.left-box .counter');
+        leftbox.classList.add('active'); // adds the 'active' class  
+        
+        const rightbox = document.querySelector('.right-box .counter');
+        rightbox.classList.remove('active'); // removes the 'active' class  
     }
     
 
@@ -103,6 +128,7 @@ function togglePause() {
     
     else {
         if (isRunning) {
+            console.log('togglePause')
             startCountdown(); // Resume countdown if running
         }
         pauseIcon.setAttribute("name", "pause-outline"); // Change icon to pause
@@ -123,13 +149,14 @@ function pauseCountdown() {
 
 
 function refreshCountdown() {
+
     const pauseIcon = document.getElementById("pause-icon");
     clearInterval(intervalId); // Stop the countdown
     pauseIcon.setAttribute("name", "play-outline"); // Change icon to play
     pauseIcon.classList.add("play-state"); // Add play-state class for offset
-
+    
     leftTime=rightTime = startTime;
-    currentTimer = 'left'; // Start with the left timer
+    currentTimer = startwhite(); // Start with the left timer
     // intervalId = null;
     isRunning = false; // Track if the countdown is running
 
