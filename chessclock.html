@@ -6,10 +6,12 @@
         <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
         <link rel="stylesheet" type="text/css" href="resources/css/toggle.css" >
         <link rel="stylesheet" type="text/css" href="resources/css/landsacpe.css" >
+        <link rel="stylesheet" type="text/css" href="resources/css/time_control.css" >
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
         <script src="particles.js" defer></script>
         <script src="toggle.js"></script>
         <script src="landsacpe.js"></script>
+        <script src="time_control.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
         <title>Ek Patla Giraffe</title>
@@ -53,18 +55,43 @@
 
                 <div class="container">
                     <div class="box left-box touchBox">
-                        <h1 class="row centre counter touchBox" id="left-timer">10:00</h1>
+                        <h1 class="row centre counter touchBox" id="left-timer">00:00</h1>
                     </div>
 
                     <div class="action_btns ignore-touch">
-                        <button class="action-button refresh-button" onclick="refreshCountdown()" ><ion-icon name="reload-outline"></ion-icon></button>
-                        <button class="action-button pause-button" onclick="pauseCountdown() , togglePause()" ><ion-icon id="pause-icon" class="play-state" name="play-outline"></ion-icon></button>
-                        <button class="action-button pause-button" onclick="pauseCountdown() , togglePause()" ><ion-icon name="shuffle-outline"></ion-icon></button>
+                        <button class="action-button" onclick="refreshCountdown()" ><ion-icon name="reload-outline"></ion-icon></button>
+                        <button class="action-button" onclick="pauseCountdown() , togglePause()" ><ion-icon id="pause-icon" class="play-state" name="play-outline"></ion-icon></button>
+                        <button class="action-button" onclick="stopCountdown() , showPopup()" ><ion-icon name="shuffle-outline"></ion-icon></button>
                     </div>
-                        
+                    
                     
                     <div class="box right-box touchBox">
-                        <h1 class="row centre counter touchBox" id="right-timer">10:00</h1>
+                        <h1 class="row centre counter touchBox" id="right-timer">00:00</h1>
+                    </div>
+                </div>
+                
+                <div id="popup" class="popup showflex">
+                    <div class="popup-content">
+                        <div class="popup-heading">
+                            <h2>Enter Start Time</h2>
+                        </div>
+                        <!-- <div class="popup-back">
+                            <button class="popup-button cross" onclick="" ><ion-icon name="return-up-back-outline"></ion-icon></button>
+                        </div> -->
+                        <div class="popup-cross">
+                            <button class="popup-button cross" onclick="startDefault()" ><ion-icon name="close-outline"></ion-icon></button>
+                        </div>
+                        <div class="popup-time">
+                            <input type="number" id="startTime" placeholder="Start Time in Seconds">
+                        </div>
+                        <div class="popup-increment">
+                            <input type="number" id="increment" placeholder="Increment in Seconds">
+                        </div>
+                        <div class="popup-start">
+                            <button class="popup-button start" onclick="submitStartTime()">Start</button>
+                        </div>
+                        <div class="item_2">
+                        </div>
                     </div>
                 </div>
             </div>

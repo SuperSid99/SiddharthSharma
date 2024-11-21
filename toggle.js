@@ -1,17 +1,78 @@
-let ignoreButtons;
+
+
+// let ignoreButtons;
 
 // Initial countdown times in seconds for each timer
 let leftTime; // for left box
 let rightTime; // for right box
 let startTime; // for resetting
-let incriment; // The incriment
+let increment; // The increment
 let currentTimer;
-startTime=leftTime=rightTime = 600;
-incriment=5;
+
+let defaultTime = 600
+let defaultIncrement = 5
+
 
 
 let intervalId = null;
 let isRunning = false; // Track if the countdown is running
+
+
+let popup;
+let shuffleButton;
+
+
+startTime =leftTime=rightTime = defaultTime;
+increment = defaultIncrement;
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    popup = document.getElementById("popup");
+    shuffleButton = document.getElementById("shuffleButton");
+    
+    console.log(popup)
+    window.addEventListener("load", showPopup);
+});
+
+
+// Function to show the popup
+function showPopup() {
+    popup.classList.remove("hidden");
+    popup.classList.add("showflex");
+}
+
+// Function to hide the popup
+function hidePopup() {
+    popup.classList.add("hidden");
+    popup.classList.remove("showflex");
+}
+
+// Function to submit the start time
+function submitStartTime() {
+    startTime = parseInt(document.getElementById("startTime").value);
+    increment = parseInt(document.getElementById("increment").value);
+
+    if (startTime === NaN){
+        startTime =leftTime=rightTime = defaultTime;
+        increment = defaultIncrement;
+        updateTimerDisplay();
+        hidePopup(); // Hide the popup after setting the time
+    }
+    else{
+        leftTime=rightTime = startTime;
+        // increment = defaultIncrement;
+        updateTimerDisplay();
+        hidePopup(); // Hide the popup after setting the time
+    }
+}
+
+function startDefault() {
+    updateTimerDisplay();
+    hidePopup(); // Hide the popup after setting the time
+}
+
+
+
 
 
 function toggleColors() {
@@ -97,7 +158,7 @@ function switchTimer() {
     // currentTimer = currentTimer === 'left' ? 'right' : 'left';
 
     if (currentTimer === 'left') {
-        leftTime+=incriment;
+        leftTime+=increment;
         document.getElementById('left-timer').textContent = formatTime(leftTime);
         currentTimer='right';
         const leftbox = document.querySelector('.left-box .counter');
@@ -108,7 +169,7 @@ function switchTimer() {
     }
 
     else if (currentTimer === 'right') {
-        rightTime+=incriment;
+        rightTime+=increment;
         document.getElementById('right-timer').textContent = formatTime(rightTime);
         currentTimer='left';
         const leftbox = document.querySelector('.left-box .counter');
@@ -150,6 +211,13 @@ function pauseCountdown() {
     else if (isRunning) {
         startCountdown(); // Resume countdown if it was already running
     }
+}
+
+function stopCountdown() {
+    const pauseIcon = document.getElementById("pause-icon");
+    clearInterval(intervalId); // Stop the countdown
+    pauseIcon.setAttribute("name", "play-outline"); // Change icon to play
+    pauseIcon.classList.add("play-state"); // Add play-state class for offset
 }
 
 
