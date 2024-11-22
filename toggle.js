@@ -52,7 +52,7 @@ function submitStartTime() {
     startTime = parseInt(document.getElementById("startTime").value);
     increment = parseInt(document.getElementById("increment").value);
 
-    if (startTime === NaN){
+    if (!(document.getElementById("startTime").value)){
         startTime =leftTime=rightTime = defaultTime;
         increment = defaultIncrement;
         updateTimerDisplay();
@@ -60,7 +60,9 @@ function submitStartTime() {
     }
     else{
         leftTime=rightTime = startTime;
-        // increment = defaultIncrement;
+        if(!(document.getElementById("increment").value)){
+            increment=0;
+        }
         updateTimerDisplay();
         hidePopup(); // Hide the popup after setting the time
     }
@@ -70,8 +72,6 @@ function startDefault() {
     updateTimerDisplay();
     hidePopup(); // Hide the popup after setting the time
 }
-
-
 
 
 

@@ -8,6 +8,10 @@
     display: flex;
 }
 
+.showblock{
+    display: flex;
+}
+
 /* Frosted glass overlay for the popup background */
 .popup {
     position: fixed;
