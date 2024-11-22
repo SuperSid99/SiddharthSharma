@@ -1,5 +1,5 @@
 function checkOrientation() {
-    rotateMessage=document.querySelector(".rotate-box")
+    rotateMessage=document.querySelector(".rotate-message")
     if (window.innerHeight > window.innerWidth) {
         rotateMessage.classList.add('showBlock');
         rotateMessage.classList.remove('hidden');
@@ -15,6 +15,3 @@ function checkOrientation() {
 // Run the function on load and on orientation change
 window.addEventListener("load", checkOrientation);
 window.addEventListener("resize", checkOrientation);
-
-const leftbox = document.querySelector('.left-box .counter');
-            leftbox.classList.add('active');
