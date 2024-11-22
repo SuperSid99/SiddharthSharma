@@ -4,12 +4,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    /* background: rgba(35, 35, 35, 0.5); */
-    /* color: white; */
     padding: 20px;
     border-radius: 10px;
-    /* font-weight: 500;
-    font-size: 300%; */
     
 }
 
@@ -30,6 +26,5 @@
 
 /* Apply the animation */
 #phoneIcon {
-    display: inline-block;
     animation: rotateIcon 2s linear infinite;
 }
