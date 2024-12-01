@@ -222,8 +222,8 @@ p {
     width: 250px;
     height: 125px;
     top: 70px; /* Adjust position as needed */
-    left: -50px;
-    transform: translateX(-50%);
+    /* left: -25px; */
+    transform: translateX(-70%);
     background-image: url('resume.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -245,10 +245,22 @@ p {
     position: absolute;
     width: 250px;
     height: 125px;
+    top: 70px; /* Adjust position as needed */
+    /* left: 20px; */
+    transform: translateX(20%);
+    background-image: url('linkedin2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.arrow_work {
+    position: absolute;
+    width: 125px;
+    height: 63px;
     top: -70px; /* Adjust position as needed */
-    left: 20px;
-    transform: translateX(50%);
-    background-image: url('linkedin.svg');
+    left: -20px;
+    /* transform: translateX(50%); */
+    background-image: url('projects.svg');
     background-size: contain;
     background-repeat: no-repeat;
 }
