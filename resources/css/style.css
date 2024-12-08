@@ -279,6 +279,11 @@ main {
         grid-template-columns: 1fr;
     }
 
+    .row {
+        max-width:85vw;
+        margin: 0 auto;
+    }
+
     .social_media {
         float: none;
         text-align: center;
