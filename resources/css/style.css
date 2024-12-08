@@ -115,6 +115,11 @@ p {
 
 .footer {
     margin-bottom: 50px;
+    display: grid;
+    align-items: center;
+}
+
+.footer_mail{
     display: flex;
     align-items: center;
 }
