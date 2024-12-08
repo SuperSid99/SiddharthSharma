@@ -1,0 +1,61 @@
+.project{
+    margin-top: 30px;
+}
+
+.project_head {
+    margin-top: 50px;
+    display: flex;
+    align-items:center;
+}
+
+.project_head_link{
+    text-decoration:none;
+    /* border-bottom: solid 1px;
+    border-color: rgb(255, 255, 255); */
+}
+
+.project_sub_head {
+    margin-top: 10px;
+    display: flex;
+    text-align:left;
+    align-items: center;
+}
+
+.project_link{
+    text-decoration:none;
+    border-bottom: solid 1px;
+    border-color: rgb(255, 255, 255);
+}
+
+.project_body {
+    margin-top: 30px;
+    /* display: flex; */
+    align-items: center;
+    text-align: justify;
+}
+
+
+.divide{
+    margin-top: 50px;
+    margin-bottom: 75px;
+    border-top: solid 1px;
+    border-color: rgb(255, 255, 255);
+}
+
+.arrow_here {
+    width: 145px;
+    height: 90px;
+    transform: translateX(-15%) translateY(5%);
+    background-image: url('read_here2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.arrow_chess_heading {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    transform: translateX(-5%) translateY(-60%);
+    background-image: url('chess_heading2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

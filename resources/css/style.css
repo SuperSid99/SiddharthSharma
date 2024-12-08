@@ -49,21 +49,32 @@ h1 {
 h2, h3 {
 
     color: #fff;
-    font-weight: 300;
     letter-spacing: 1px;
     word-spacing: 4px;
 }
 
 h2 {
-
-    color: #fff;
     font-size: 200%;
 }
 
 h3 {
-
-    color: #fff;
     font-size: 100%;
+}
+
+.w100{
+    font-weight: 100;
+}
+
+.w200{
+    font-weight: 200;
+}
+
+.w300{
+    font-weight: 300;
+}
+
+.underline{
+    text-decoration: underline;
 }
 
 h4 {
@@ -102,35 +113,11 @@ p {
     text-align: left;
 }
 
-.events {
-    margin-top: 30px;
+.footer {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
 }
-
-.event_list {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-}
-
-.event_pic {
-    width: 100%;
-    margin: 0;
-}
-
-.event_pic img {
-    width: 100%;
-    height: auto;
-    padding: 25px;
-}
-
-.event_1 {
-    width: 100%;
-}
-
-/* .fillscreen {
-    width: 100vw;
-    height: 100vh;
-  } */
 
 .centretext{
     text-align: center;
@@ -142,7 +129,6 @@ p {
     text-align: center;
     vertical-align: middle;
 }
-
 
 /* Buttons Styles */
 
