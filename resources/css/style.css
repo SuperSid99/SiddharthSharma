@@ -123,6 +123,10 @@ main {
     text-align: left;
 }
 
+.events{
+    margin-top: 30vh;
+}
+
 .footer {
     margin-bottom: 50px;
     display: grid;
