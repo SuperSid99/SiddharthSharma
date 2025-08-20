@@ -98,19 +98,135 @@
     grid-row: 1/2;
 }
 
-.popup-time{
-    grid-column: 1/6;
-    grid-row: 4/5;
+/* Force-hide utility */
+.hidden { display: none !important; }
+
+/* Both panes use the same slot so only one shows at a time */
+#presetGrid,
+#customPanel {
+  grid-column: 1 / 11;
+  grid-row: 5 / 8;   /* match your popup layout */
 }
-.popup-increment{
-    grid-column: 6/11;
-    grid-row: 4/5;
+
+/* Symmetric two-column layout for custom inputs */
+#customPanel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* equal halves */
+  column-gap: 20px;                /* visual center line */
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
 }
+
+.popup-time,
+.popup-increment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#customPanel input {
+  width: 100%;
+  max-width: 180px;     /* tweak as you like */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
 
 .popup-start{
     grid-column: 1/11;
     grid-row: 9/11;
 }
+
+/* MODE ROW */
+.popup-modes {
+    grid-column: 1/11;
+    grid-row: 3/4;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mode-btn {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font-size: 11px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color .2s, color .2s, transform .05s;
+  }
+  
+  .mode-btn ion-icon {
+    font-size: 18px;
+  }
+  
+  .mode-btn:hover { background-color: #ffffff; color: #000000; }
+  .mode-btn:active { transform: scale(0.98); }
+  
+  .mode-btn.active {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* PRESETS GRID */
+  .popup-presets {
+    grid-column: 1/11;
+    grid-row: 5/8;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(60px, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .preset-btn {
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+    background: transparent;
+    color: #fff;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color .2s, color .2s, transform .05s, border .2s;
+  }
+  
+  .preset-btn:hover { background-color: #ffffff; color: #000000; }
+  .preset-btn:active { transform: scale(0.98); }
+  .preset-btn.selected { background-color: #ffffff; color: #000000; }
+  
+  /* CUSTOM PANEL POSITION (existing inputs now grouped) */
+  .popup-custom {
+    grid-column: 1/11;
+    grid-row: 5/8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Pair grid: two columns with a center line */
+.pair-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; row-gap:12px; align-items:center; }
+.pair-grid > *:nth-child(odd) { justify-self:end; }
+.pair-grid > *:nth-child(even){ justify-self:start; }
+.pair-grid > *.center-span { grid-column:1 / -1; justify-self:center; }
+
+  
+  /* utility */
+  .hidden { display: none; }
+  
 
 /* .popup-content button {
     padding: 10px 20px;

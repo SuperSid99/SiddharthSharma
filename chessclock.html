@@ -82,28 +82,43 @@
                 
                 <div id="popup" class="popup showflex">
                     <div class="popup-content">
-                        <div class="popup-heading">
-                            <h2 class="w300">Enter Start Time</h2>
-                        </div>
-                        <!-- <div class="popup-back">
-                            <button class="popup-button cross" onclick="" ><ion-icon name="return-up-back-outline"></ion-icon></button>
-                        </div> -->
-                        <div class="popup-cross">
-                            <button class="popup-button cross" onclick="startDefault()" ><ion-icon name="close-outline"></ion-icon></button>
-                        </div>
+                      <div class="popup-heading">
+                        <h2 class="w300">Enter Start Time</h2>
+                      </div>
+                  
+                      <div class="popup-cross">
+                        <button class="popup-button cross" onclick="startDefault()">
+                          <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                      </div>
+                  
+                      <!-- NEW: Mode buttons row -->
+                      <div class="popup-modes" id="modeGrid">
+                        <!-- Buttons are created by JS; leave empty -->
+                      </div>
+                  
+                      <!-- NEW: Presets area (shown for Bullet/Blitz/Rapid/Classical) -->
+                      <div class="popup-presets hidden" id="presetGrid"></div>
+                  
+                      <!-- EXISTING: Custom input panel (now wrapped so we can toggle it) -->
+                      <div id="customPanel" class="popup-custom hidden">
                         <div class="popup-time">
-                            <input type="number" id="startTime" placeholder="Start Time in Seconds">
+                          <input type="number" id="startTime" placeholder="Start Time in Seconds">
                         </div>
                         <div class="popup-increment">
-                            <input type="number" id="increment" placeholder="Increment in Seconds">
+                          <input type="number" id="increment" placeholder="Increment in Seconds">
                         </div>
-                        <div class="popup-start">
-                            <button class="popup-button start" onclick="submitStartTime()">Start</button>
-                        </div>
-                        <div class="item_2">
-                        </div>
+                      </div>
+                      
+                  
+                      <div class="popup-start">
+                        <button class="popup-button start" onclick="submitStartTime()">Start</button>
+                      </div>
+                  
+                      <div class="item_2"></div>
                     </div>
-                </div>
+                  </div>
+                  
             </div>
             
         </section>
