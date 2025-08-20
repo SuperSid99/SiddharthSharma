@@ -230,12 +230,26 @@ function formatTime(seconds) {
   return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
+// cache elements after DOM is ready
+let leftTimerEl, rightTimerEl;
+
+document.addEventListener("DOMContentLoaded", () => {
+  leftTimerEl  = document.getElementById("left-timer");
+  rightTimerEl = document.getElementById("right-timer");
+
+  // If we're on a page that doesn't have the timers (e.g., projects.html), bail out.
+  if (!leftTimerEl || !rightTimerEl) return;
+
+  updateTimerDisplay();   // safe to call now
+});
+
+// SAFE update function
 function updateTimerDisplay() {
-  const l = document.getElementById('left-timer');
-  const r = document.getElementById('right-timer');
-  if (l) l.textContent = formatTime(leftTime);
-  if (r) r.textContent = formatTime(rightTime);
+  if (!leftTimerEl || !rightTimerEl) return; // hard guard
+  leftTimerEl.textContent  = formatTime(leftTime);
+  rightTimerEl.textContent = formatTime(rightTime);
 }
+
 
 // ====== Countdown logic ======
 function startCountdown() {
