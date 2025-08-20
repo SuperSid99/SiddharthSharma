@@ -64,28 +64,31 @@ function setInputsByPreset(minutes, incSec){
 }
 
 function renderModes(){
-  const grid = qs("modeGrid");
-  if (!grid) return;
-  ensurePairGrid(grid);
-  grid.innerHTML = "";
-
-  MODES.forEach(({key, title, icon})=>{
-    const btn = document.createElement("button");
-    btn.className = "mode-btn" + (currentMode===key ? " active" : "");
-    btn.setAttribute("data-mode", key);
-    btn.innerHTML = `
-      <ion-icon name="${icon}"></ion-icon>
-      <div style="font-size:10px;line-height:1;margin-top:2px;">${title}</div>
-    `;
-    btn.addEventListener("click", ()=>selectMode(key));
-    grid.appendChild(btn);
-  });
-
-  // If odd count, center the last item over the axis
-  if (MODES.length % 2 === 1) {
-    grid.lastElementChild.classList.add("center-span");
+    const grid = document.getElementById("modeGrid");
+    if (!grid) return;
+  
+    grid.innerHTML = "";
+  
+    const MODES = [
+      { key: "bullet",    title: "Bullet",    icon: "flash-outline" },
+      { key: "blitz",     title: "Blitz",     icon: "speedometer-outline" },
+      { key: "rapid",     title: "Rapid",     icon: "timer-outline" },
+      { key: "classical", title: "Classical", icon: "hourglass-outline" },
+      { key: "custom",    title: "Custom",    icon: "construct-outline" }
+    ];
+  
+    for (const {key, title, icon} of MODES) {
+      const btn = document.createElement("button");
+      btn.className = "mode-btn" + (key === "custom" ? " active" : "");
+      btn.dataset.mode = key;
+      btn.innerHTML = `
+        <ion-icon name="${icon}"></ion-icon>
+        <div style="font-size:10px;line-height:1;margin-top:2px;">${title}</div>
+      `;
+      btn.addEventListener("click", ()=> selectMode(key));
+      grid.appendChild(btn);
+    }
   }
-}
 
 function renderPresets(modeKey){
   const presetGrid = qs("presetGrid");
@@ -393,6 +396,39 @@ document.addEventListener('touchstart', (event) => {
     }
   }
 });
+
+(function initPopupUI() {
+    // Run only after DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initPopupUI);
+      return;
+    }
+  
+    const modeGrid     = document.getElementById("modeGrid");
+    const presetGrid   = document.getElementById("presetGrid");
+    const customPanel  = document.getElementById("customPanel");
+  
+    // If popup isn't on this page, do nothing
+    if (!modeGrid || !presetGrid || !customPanel) return;
+  
+    // Try rendering modes; if that fails, fall back to custom panel
+    try {
+      if (typeof renderModes === "function") renderModes();
+      if (typeof selectMode === "function") {
+        // Default to Custom so the inputs are visible on first load
+        selectMode("custom");
+      } else {
+        // Fallback if selectMode is not defined
+        presetGrid.classList.add("hidden");
+        customPanel.classList.remove("hidden");
+      }
+    } catch (e) {
+      console.warn("Popup UI init failed, showing Custom:", e);
+      presetGrid.classList.add("hidden");
+      customPanel.classList.remove("hidden");
+    }
+  })();
+  
 
 // ====== Initial paint ======
 updateTimerDisplay();
