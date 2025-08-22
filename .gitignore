@@ -131,8 +131,8 @@ __pycache__/
 # Image or model blobs (optional)
 # ===================
 # *.png
-*.jpg
-*.jpeg
+# *.jpg
+# *.jpeg
 *.bmp
 *.tflite
 *.h5
