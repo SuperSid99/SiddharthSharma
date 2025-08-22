@@ -1,183 +1,197 @@
+<!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css" >
-        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css" >
-        <link rel="stylesheet" type="text/css" href="resources/css/style.css" >
-        <link rel="stylesheet" type="text/css" href="resources/css/projects.css" >
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
-        <!-- <script src="particles.js" defer></script> -->
-        <script src="toggle.js"></script>
-        <script src="landsacpe.js"></script>
-        <script src="time_control.js"></script>
-        <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script> -->
-        <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-        <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
-        <title>Ek Patla Giraffe</title>
-        
-    
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Siddharth Sharma — Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "Noto Sans", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(0,0,0,0.15)",
+            glass: "0 10px 30px rgba(2,6,23,0.25)",
+          },
+        },
+      },
+      darkMode: 'media',
+    };
+  </script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .card:hover { transform: translateY(-6px); }
+    .card-img { border-radius: 1rem; margin-bottom: 1rem; width: 100%; height: 16rem; object-fit: cover; }
+    .chip { font-size: 11px; padding: 0.25rem 0.6rem; border-radius: 9999px; border-width: 1px; backdrop-filter: blur(4px); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/70 dark:bg-neutral-950/60 border-b border-neutral-200/60 dark:border-neutral-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 font-semibold tracking-tight">
+          <ion-icon name="home-outline" class="text-xl"></ion-icon>
+          <span>Siddharth Sharma</span>
+        </a>
+        <nav class="flex items-center gap-2">
+          <a href="Siddharth_Sharma_Resume.pdf" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition">
+            <ion-icon name="document-outline"></ion-icon>
+            <span class="hidden sm:inline">Resume</span>
+          </a>
+          <a href="https://github.com/SuperSid99" class="inline-flex items-center gap-2 px-3 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="https://www.linkedin.com/in/siddharth-sharma-ba30051a1/" class="inline-flex items-center gap-2 px-3 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-    
-    <body>
-        <!-- <div class="wrapper"> -->
-            <header class="header">
-            <div class="row header_pt1">
-                <h1 class="main_heading">Research and Projects</h1>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-6 text-center">
+    <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight">Research & Projects</h1>
+    <p class="mt-2 text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">Sometimes I research and build stuff.</p>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 space-y-16">
+    <!-- Personal & Research Section (TOP) -->
+    <section aria-labelledby="personal-heading" class="text-center">
+      <h2 id="personal-heading" class="text-2xl font-bold tracking-tight mb-10 flex items-center justify-center gap-2">
+        <ion-icon name="sparkles-outline"></ion-icon>
+        Personal & Research
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Card 1 -->
+        <div class="p-[1px] rounded-3xl bg-gradient-to-br from-emerald-300/40 via-neutral-200 to-transparent dark:from-emerald-400/20 dark:via-neutral-800" onclick="window.location.href=`https://3-d-trachking-using-monocular-vision-mujj8cgnw.vercel.app/`">
+          <article class="card rounded-3xl bg-white/80 dark:bg-neutral-900/70 shadow-glass p-5 transition">
+            <img src="Monocular.png" alt="Monocular 3D tracking thesis preview" class="card-img" />
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+              <span class="chip border-emerald-400/50 bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-200">Computer Vision</span>
+              <span class="chip border-zinc-300/60 bg-zinc-50 text-zinc-700 dark:bg-zinc-800/40 dark:text-zinc-200">Python</span>
+              <span class="chip border-cyan-300/60 bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-200">OpenCV</span>
             </div>
-            <div class="row header_pt2"> 
-                <ul class="social_media">
-                    <li><a class="btn btn_icon" href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
-                    <li><a class="btn btn_icon" href="Siddharth_Sharma_Resume.pdf"><ion-icon name="document-outline"></ion-icon></a></li>
-                    <li><a class="btn btn_icon" href="https://github.com/SuperSid99"><ion-icon name="logo-github"></ion-icon></a></li>
-                    <li><a class="btn btn_icon" href="https://www.linkedin.com/in/siddharth-sharma-ba30051a1/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                </ul>
-            </div> 
-        
-            </header>
-            
-            <section>
-                <section class="project">
-                    <div class="row project_head">
+            <h3 class="text-lg font-semibold leading-snug text-center">Human Tracking in 3D Space Using Monocular Vision</h3>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center">As a part of my master's thesis I built a novel algorithm capable of tracking subjects in 3D space using monocular vision inputs.</p>
+            <div class="mt-4 flex justify-center gap-2">
+              <a href="https://etda.libraries.psu.edu/catalog/29519szs7214" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="book-outline"></ion-icon> Paper</a>
+              <a href="https://3-d-trachking-using-monocular-vision-mujj8cgnw.vercel.app/" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="globe-outline"></ion-icon> Project</a>
+            </div>
+          </article>
+        </div>
 
-                        <a class="project_head_link" href="https://etda.libraries.psu.edu/catalog/29519szs7214">
-                            <h2 class="w100">Human tracking in 3D space Using Monocular Vision</h2>
-                        </a>
+        <!-- Card 2 -->
+        <div class="p-[1px] rounded-3xl bg-gradient-to-br from-emerald-300/40 via-neutral-200 to-transparent dark:from-emerald-400/20 dark:via-neutral-800" onclick="window.location.href=`https://siddharthsharma.dev/blockchain`">
+            <article class="card rounded-3xl bg-white/80 dark:bg-neutral-900/70 shadow-glass p-5 transition">
+              <img src="blockchain.png" alt="Monocular 3D tracking thesis preview" class="card-img" />
+              <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+                <span class="chip border-violet-400/60 bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-200">Blockchain</span>
+                <span class="chip border-amber-400/60 bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-200">Security</span>
+                <span class="chip border-slate-300/60 bg-slate-50 text-slate-700 dark:bg-slate-800/40 dark:text-slate-200">Python</span>
+                </div>
+              <h3 class="text-lg font-semibold leading-snug text-center">Blockchain Based Framework for Digital Forensics (IoT)</h3>
+              <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center">For my Capstone Project I built and publised a research paper about a blockchain based database to store digital evidences.</p>
+              <div class="mt-4 flex justify-center gap-2">
+                <a href="https://tarupublications.com/doi/10.47974/JDMSC-1733" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="book-outline"></ion-icon> Paper</a>
+                <a href="https://siddharthsharma.dev/blockchain" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="globe-outline"></ion-icon> Project</a>
+            </div>
+            </article>
+          </div>
 
-                    </div>
-                    <div class="row project_sub_head">
+        <!-- Card 3 (centered when odd) -->
+        <div class="md:col-span-2 flex justify-center">
+          <div class="p-[1px] rounded-3xl bg-gradient-to-br from-indigo-300/40 via-neutral-200 to-transparent dark:from-indigo-400/20 dark:via-neutral-800 max-w-xl w-full" onclick="window.location.href=`https://chess-clock-next.vercel.app/`">
+            <article class="card rounded-3xl bg-white/80 dark:bg-neutral-900/70 shadow-glass p-5 transition">
+              <img src="chessclock.png" alt="Web-based chess clock screenshot" class="card-img" />
+              <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+                <span class="chip border-indigo-400/60 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-200">Next.js</span>
+                <span class="chip border-fuchsia-400/60 bg-fuchsia-50 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-200">TypeScript</span>
+                <span class="chip border-slate-300/60 bg-slate-50 text-slate-700 dark:bg-slate-800/40 dark:text-slate-200">Vercel</span>
+              </div>
+              <h3 class="text-lg font-semibold leading-snug text-center">Chess Clock (Web)</h3>
+              <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center">I really enjoy playing chess and didn't want to buy a clock. So, I did what any proagrammer would do, I coded it :)</p>
+              <div class="mt-4 flex justify-center gap-2">
+                <a href="https://chess-clock-next.vercel.app/" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="rocket-outline"></ion-icon> Live</a>
+                <a href="https://github.com/SuperSid99/chess-clock-next" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="logo-github"></ion-icon> Code</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                        <h3 class="w300">Master's Thesis Research :&nbsp;</h3>
-                        <a class="project_link" href="https://etda.libraries.psu.edu/catalog/29519szs7214">
-                            <h3 class="w300">https://etda.libraries.psu.edu/catalog/29519szs7214</h3>
-                        </a>
-                        
-                    </div>
-                    <div  class="row project_body">
-                        
-                        <h3 class="w300">
-                            This is my Master's Thesis, I worked on it for a little over a year. The thesis focuses on the object tracking problem in computer vision.
-                            Specifically Tracking people/objects in 3D space without the use of special equipment for depth estimation. 
-                            That is, just using images and videos from a regular smartphone camera, 
-                            the program can accurately calculate the location of the subject in the 3D surroundings that it exists in.
-                        </h3>
-                        <h3 class="w300">
-                            <br>
-                        </h3>
-                        <div class="row project_sub_head">
-                            <a class="project_link" href="https://etda.libraries.psu.edu/catalog/29519szs7214">
-                                <h3 class="w300">
-                                    Read more about it here...
-                                </h3>
-                            </a>
-                            <!-- <div class="arrow_here"></div> -->
-                        </div>
-                    </div>
+    <section aria-labelledby="work-heading" class="text-center">
+      <h2 id="work-heading" class="text-2xl font-bold tracking-tight mb-10 flex items-center justify-center gap-2">
+        <ion-icon name="briefcase-outline"></ion-icon>
+        Work Products
+      </h2>
 
-                    <div class="row divide"></div>
-                    
-                    <div class="row project_head">
-                        
-                        <a class="project_head_link" href="https://siddharthsharma.dev/blockchain">
-                            <h2 class="w100">A blockchain based private framework for facilitating digital forensics using IoT</h2>
-                        </a>
-                        
-                    </div>
-                    <div class="row project_sub_head">
-                        
-                        <h3 class="w300">Published Research Paper :&nbsp;</h3>
-                        <a class="project_link" href="https://tarupublications.com/doi/10.47974/JDMSC-1733">
-                            <h3 class="w300">https://tarupublications.com/doi/10.47974/JDMSC-1733</h3>
-                        </a>
-                        
-                    </div>
-                    <div  class="row project_body">
-                        
-                        <h3 class="w300">
-                            As a part of my undergraduate program I worked on a research project where I created a blockchain from scratch. 
-                            And then built a database management system using the blockchain to store digital evidences for criminal forensics.
-                        </h3>
-                        
-                        <h3 class="w300">
-                            <br>
-                        </h3>
+      <!-- GRID: handle odd count by centering last! -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Card 1 -->
+        <div class="p-[1px] rounded-3xl bg-gradient-to-br from-sky-300/40 via-neutral-200 to-transparent dark:from-sky-400/20 dark:via-neutral-800" onclick="window.location.href=`https://neuranet.app/`">
+          <article class="card rounded-3xl bg-white/80 dark:bg-neutral-900/70 shadow-glass p-5 transition">
+            <img src="tekmonks.png" alt="Enterprise Knowledge Chatbot UI" class="card-img" />
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+              <span class="chip border-sky-400/60 bg-sky-50 text-sky-700 dark:bg-sky-900/30 dark:text-sky-200">RAG</span>
+              <span class="chip border-violet-400/60 bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-200">LLMs</span>
+              <span class="chip border-zinc-300/60 bg-zinc-50 text-zinc-700 dark:bg-zinc-800/40 dark:text-zinc-200">Python</span>
+              <span class="chip border-rose-400/60 bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-200">OAuth / Google SSO</span>
+            </div>
+            <h3 class="text-lg font-semibold leading-snug text-center">Enterprise AI Assistant</h3>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center p-2">An AI assistant that only provides verified and sourced answers. No Halucinations!</p>
+            <div class="mt-4 flex justify-center gap-2">
+              <a href="https://neuranet.app/" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="document-outline"></ion-icon>Product</a>
+            </div>
+          </article>
+        </div>
 
-                        <div class="row project_sub_head">
-                            <a class="project_link" href="https://siddharthsharma.dev/blockchain">
-                                <h3 class="w300">
-                                    Read more about it here...
-                                </h3>
-                            </a>
-                            <!-- <div class="arrow_here"></div> -->
-                        </div>
-                    </div>
+        <!-- Card 2 -->
+        <div class="p-[1px] rounded-3xl bg-gradient-to-br from-fuchsia-300/40 via-neutral-200 to-transparent dark:from-fuchsia-400/20 dark:via-neutral-800" onclick="window.location.href=`https://tinyarchives.com/`">
+          <article class="card rounded-3xl bg-white/80 dark:bg-neutral-900/70 shadow-glass p-5 transition">
+            <img src="tinyarchives.png" alt="Tiny Archives subscription & payments UI" class="card-img" />
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+              <span class="chip border-fuchsia-400/60 bg-fuchsia-50 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-200">Stripe</span>
+              <span class="chip border-indigo-400/60 bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-200">React / Next.js</span>
+              <span class="chip border-slate-300/60 bg-slate-50 text-slate-700 dark:bg-slate-800/40 dark:text-slate-200">PostgreSQL</span>
+              <span class="chip border-amber-400/60 bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-200">AWS</span>
+            </div>
+            <h3 class="text-lg font-semibold leading-snug text-center">ArchiveOS</h3>
+            <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400 text-center p-5">A finding aid creation tool.</p>
+            <div class="mt-4 flex justify-center gap-2">
+              <a href="https://tinyarchives.com/" class="inline-flex items-center gap-1 text-sm px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"><ion-icon name="document-outline"></ion-icon>Product</a>
+            </div>
+          </article>
+        </div>
 
-                    <div class="row divide"></div>
-                
-                    <div class="row project_head">
-                        
-                        <a class="project_head_link" href="https://chess-clock-next.vercel.app/">
-                            <h2 class="w100">Chess Clock</h2>
-                        </a>
+      </div>
+    </section>
 
-                    </div>
-                    <div class="row project_sub_head">
-                        
-                        <h3 class="w300">Personal Project :&nbsp;</h3>
-                        
-                        <a  href="https://chess-clock-next.vercel.app/">
-                            <div href="https://chess-clock-next.vercel.app/" class="arrow_chess_heading"></div>
-                        </a>
-                        
-                    </div>
-                    <div  class="row project_body">
-                                    
-                        <h3 class="w300">I really enjoy playing chess and didn't want to buy a clock. So, I did what any proagrammer would do, I coded it :)
-                            <br><br>              
-                        </h3>
-                    </div>
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">Want to chat about my work? Reachout! the mailbox is always open :)</p>
+      <div class="flex gap-2">
+        <a href="Siddharth_Sharma_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition">
+          <ion-icon name="download-outline"></ion-icon>
+          Download Resume
+        </a>
+        <a href="mailto:siddharth22sharma@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl shadow-soft bg-black text-white dark:bg-white dark:text-black hover:opacity-90 transition">
+          <ion-icon name="chatbubbles-outline"></ion-icon>
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </main>
 
-                    <div class="row divide"></div>
-                    
-                </section>
+  <footer class="border-t border-neutral-200 dark:border-neutral-800 py-10 text-center">
+    <p class="text-sm text-neutral-600 dark:text-neutral-400">© <span id="year"></span> Siddharth Sharma</p>
+  </footer>
 
-            </section>
-
-            <footer class="footer">
-                <!-- <div class="row header_pt1">
-                    <h1 class="main_heading">Research and Projects</h1>
-                </div> -->
-                <div class="row"> 
-                    <ul class="social_media">
-                        <li><a class="btn btn_icon" href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
-                        <li><a class="btn btn_icon" href="Siddharth_Sharma_Resume.pdf"><ion-icon name="document-outline"></ion-icon></a></li>
-                        <li><a class="btn btn_icon" href="https://github.com/SuperSid99"><ion-icon name="logo-github"></ion-icon></a></li>
-                        <li><a class="btn btn_icon" href="https://www.linkedin.com/in/siddharth-sharma-ba30051a1/"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                        <li><a class="btn btn_icon" href="https://www.instagram.com/ekpatlagiraffe/"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                    </ul>
-                </div> 
-                <div class="row footer_mail"> 
-                    <h3 class="w300">
-                        Reachout to me at : &nbsp;
-                    </h3>
-                    <a class="footer_link" href="mailto:siddharthsharmajobs@gmail.com">
-                        <h3 class="w300">siddharthsharmajobs@gmail.com</h3>
-                    </a>
-                </div> 
-
-            </footer>
-        <!-- </div> -->
-
-
-
-
-      
-    </body>
-
-
-
-
-    </html>
-    
-    
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
