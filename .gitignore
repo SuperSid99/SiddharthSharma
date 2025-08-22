@@ -130,7 +130,7 @@ __pycache__/
 # ===================
 # Image or model blobs (optional)
 # ===================
-*.png
+# *.png
 *.jpg
 *.jpeg
 *.bmp
